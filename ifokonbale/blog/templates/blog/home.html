@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>IFOKONBALE - Home</title>
+    <style>
+        body { background: #121212; color: white; font-family: Arial, sans-serif; margin: 0; padding: 0; }
+        .nav { background: #000; padding: 15px 30px; display: flex; gap: 25px; align-items: center; }
+        .nav a { color: white; text-decoration: none; font-weight: bold; }
+        .nav a:first-child { color: #FFD700; font-size: 22px; }
+        .hero { text-align: center; padding: 50px 20px 20px 20px; }
+        .hero h1 { color: #FFD700; font-size: 42px; margin: 0; }
+        .hero p { color: #aaa; }
+        .container { max-width: 750px; margin: 0 auto; padding: 20px; }
+        .post-card { background: #1e1e1e; padding: 25px; border-radius: 10px; margin-bottom: 20px; }
+        .post-card h2 { margin: 0 0 10px 0; }
+        .post-card h2 a { color: white; text-decoration: none; }
+        .post-meta { color: #aaa; font-size: 13px; margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+
+    <div class="nav">
+        <a href="/">IFOKONBALE</a>
+        <a href="/">Home</a>
+        <a href="/about/">About</a>
+    </div>
+
+    <div class="hero">
+        <h1>IFOKONBALE</h1>
+        <p>Music • Stories • Culture</p>
+    </div>
+
+    <div class="container">
+
+        <!-- ===== START: PASTE SPOTIFY HERE ===== -->
+        <!-- This is where you paste it - right after <div class="container"> -->
+
+        <h2 style="color: #FFD700; margin-top: 20px;">🎵 Latest Music - Listen on Spotify</h2>
+        <p style="color: #aaa;">Full EP - 5 Tracks. Press play, it counts on Spotify.</p>
+
+        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/40m81qBPTX7z4KvMcb3zmG?utm_source=generator" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+
+        <div style="text-align: center; margin-top: 15px;">
+            <a href="https://open.spotify.com/album/40m81qBPTX7z4KvMcb3zmG?si=sDYurMkOToGdPSCMqwS20w" target="_blank" style="background: #1DB954; color: black; padding: 12px 25px; border-radius: 25px; text-decoration: none; font-weight: bold; display: inline-block;">▶️ Open in Spotify App</a>
+        </div>
+
+        <!-- ===== END: SPOTIFY ===== -->
+
+        <!-- ===== BLOG POSTS BELOW ===== -->
+        <h2 style="color: #FFD700; margin-top: 40px;">📝 Latest Posts</h2>
+
+        {% for post in posts %}
+        <div class="post-card">
+            <h2><a href="#">{{ post.title }}</a></h2>
+            <div class="post-meta">By {{ post.author }} on {{ post.date_posted }}</div>
+            <p style="color: #ccc; line-height: 1.6;">{{ post.content }}</p>
+        </div>
+        {% endfor %}
+
+    </div>
+
+</body>
+</html>

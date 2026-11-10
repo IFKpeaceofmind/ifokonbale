@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>IFOKONBALE - Login</title>
+    <style>
+        body { font-family: Arial; background: #111; color: white; margin: 0; padding: 0; }
+        .nav { background: #f5c518; padding: 15px; }
+        .nav a { color: black; font-weight: bold; text-decoration: none; margin-right: 20px; }
+        .box { max-width: 450px; margin: 60px auto; padding: 30px; background: #1e1e1e; border-radius: 10px; text-align: center; }
+        h1 { color: #f5c518; }
+        input { width: 90%; padding: 12px; margin: 10px 0; border-radius: 8px; border: none; }
+        button { background: #f5c518; color: black; padding: 12px 30px; border: none; border-radius: 20px; font-weight: bold; cursor: pointer; margin-top: 10px; }
+        a { color: #f5c518; }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <a href="/">IFOKONBALE</a>
+        <a href="/">Home</a>
+        <a href="/about/">About</a>
+    </div>
+
+    <div class="box">
+        <h1>Login to IFOKONBALE</h1>
+        <p>Welcome back!</p>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Login</button>
+        </form>
+        <p style="margin-top:20px;">No account? <a href="/register/">Sign up here</a></p>
+        <p><a href="/">← Back to Home</a></p>
+    </div>
+</body>
+</html>
